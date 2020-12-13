@@ -7,14 +7,14 @@ def solve(a, b, c):
     if D >= 0:
         x1 = (-b + sqrt(D) // (2 * a))
         x2 = (-b - sqrt(D) // (2 * a))
-        text = 'Дискриминант уравнения D = {D}, X1 = {x1}, X2 = {x2}.'
+        text = f'Дискриминант уравнения D = {D}, \nX1 = {x1}, \nX2 = {x2}.'
     else:
-        text = 'Дискриминант уравнения D = {D}, корней не существует.'
+        text = f'Дискриминант уравнения D = {D}, \nКорней не существует.'
+    return text
 
-
-def inserter(value):
+def inserter(text):
     output.delete('1.0', END)
-    output.insert(1.0, value)
+    output.insert('1.0', text)
 
 
 def main():
@@ -49,7 +49,7 @@ lab3 = Label(root, font='Arial 24', text='= 0').grid(row=1, column=6)
 
 btn = Button(root, font='Arial 16', text='Решить', command=main).grid(row=1, column=7, ipady=10)
 
-output = Text(root, bg='lightblue', fg='navy', font='Arial 20', width=45, height=13, wrap='n')
+output = Text(root, bg='gray70', font='Arial 20', width=45, height=13, wrap='n')
 output.grid(row=2, columnspan=8)
 
 root.mainloop()
