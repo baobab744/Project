@@ -12,7 +12,7 @@ def solve(a, b, c):
         text = f'Дискриминант уравнения D = {D}, \nКорней не существует.'
     return text
 
-def inserter(text):
+def insert(text):
     output.delete('1.0', END)
     output.insert('1.0', text)
 
@@ -22,9 +22,9 @@ def main():
         val1 = float(entry1.get())
         val2 = float(entry2.get())
         val3 = float(entry3.get())
-        inserter(solve(val1, val2, val3))
+        insert(solve(val1, val2, val3))
     except ValueError:
-        inserter('Впишите числа в каждое из трёх полей!')
+        insert('Впишите числа в каждое из трёх полей!')
 
 
 root = Tk()
